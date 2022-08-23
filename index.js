@@ -1,5 +1,6 @@
 //get user choice
 let userChoice = prompt("rock, paper or scissors?")
+console.log(userChoice);
 
 //get computer choice
 let computerChoice = Math.ceil(Math.random() * 3);
@@ -12,21 +13,39 @@ else if(computerChoice == 2){
 else{
   computerChoice = "scissors";
 }
-
-//choice test
-console.log(userChoice);
 console.log(computerChoice);
 
+
+
 //computer - user choice compare
-if (userChoice == computerChoice){
-  console.log("Its a tie");
-}
-else if (userChoice == "rock" && computerChoice == "paper"){
-  console.log("Computer Wins");
-}
-else if (userChoice == "rock" && computerChoice == "paper"){
-  console.log("Computer Wins");
+ let compare = function(userChoice, computerChoice){
+  if (userChoice == computerChoice){
+    console.log("draw");
+  }
+  else if (userChoice == "rock"){
+    if (computerChoice == "paper"){
+      console.log("computer wins");
+    }
+    else{
+      console.log("user wins");
+    }
+  }
+  else if (userChoice == "paper"){
+    if (computerChoice == "rock"){
+      console.log("user wins");
+    }
+    else{
+      console.log("computer wins");
+    }
+  }
+  else if(userChoice == "scissors"){
+    if (computerChoice == "rock"){
+      console.log("computer wins")
+    }
+    else{
+      console.log("user wins")
+    }
+  }
 }
 
-
-
+console.log(compare(userChoice, computerChoice));
